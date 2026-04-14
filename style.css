@@ -2,34 +2,17 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg: #f7f8fb;
-  --surface: #ffffff;
-  --surface-soft: #fffdf7;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --border-soft: #f1ede2;
-  --accent: #f3e7a0;
-  --accent-strong: #e7cf63;
-  --accent-soft: #faf3c8;
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
-}
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(to bottom, #fbfcfe 0%, #f6f7fb 100%);
-  color: var(--text);
+  background: #f7f8fb;
+  color: #1f2937;
 }
 
 .wrap {
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 32px 18px 48px;
+  padding: 28px 16px 48px;
 }
 
 .hero {
@@ -38,231 +21,284 @@ body {
 }
 
 .hero h1 {
-  margin: 0 0 10px;
-  font-size: 2.35rem;
+  margin: 0 0 8px;
+  font-size: 3rem;
   line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
   color: #111827;
 }
 
 .hero p {
   margin: 0;
-  font-size: 1.05rem;
-  color: var(--muted);
+  font-size: 1.1rem;
+  color: #4b5563;
 }
 
-/* hovedkort */
+.card,
+.game-card,
+main,
+section {
+  background: #ffffff;
+  border: 1px solid #eceff3;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* Selve spillefeltet */
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
   padding: 28px;
-  box-shadow: var(--shadow);
 }
 
-/* top-info */
-.top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Progress-tekst */
+#progressText,
+.progress-text {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
   margin-bottom: 14px;
 }
 
-.progress-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #374151;
-}
-
-/* progress bar */
-.progress-bar {
+/* Progressbar */
+.progress {
   width: 100%;
-  height: 10px;
-  background: #f3f4f6;
+  height: 12px;
+  background: #eef2f7;
   border-radius: 999px;
   overflow: hidden;
   margin-bottom: 28px;
 }
 
-.progress-fill {
+.progress-bar,
+.progress-fill,
+#progressBar {
   height: 100%;
-  width: 10%;
-  background: linear-gradient(90deg, #edd56d 0%, #f3e7a0 100%);
+  background: #e0b437;
   border-radius: 999px;
   transition: width 0.25s ease;
 }
 
-/* spørgsmålsfelt */
-.question-box {
+/* Opgavefelt */
+.question-box,
+#sentenceBox,
+#exerciseBox,
+.sentence-box {
   background: #ffffff;
-  border: 1px solid #ece7d8;
+  border: 2px solid #edf1f5;
   border-radius: 20px;
   padding: 28px 24px;
   margin-bottom: 22px;
-  text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.question-box p,
-.question-box {
   font-size: 2rem;
+  line-height: 1.5;
   font-weight: 700;
-  line-height: 1.4;
-  color: #1f2937;
+  color: #111827;
 }
 
-.blank {
+/* Tom linje i sætningen */
+.blank,
+.answer-line,
+.answer-slot {
   display: inline-block;
-  min-width: 130px;
-  border-bottom: 3px solid #9a6a43;
+  min-width: 150px;
+  border-bottom: 4px solid #8b5a2b;
   transform: translateY(-2px);
+  margin: 0 6px;
 }
 
-/* svarmuligheder */
-.options {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Knapområde */
+.options,
+#options,
+#answerButtons,
+.button-row {
+  display: flex;
   gap: 14px;
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
 }
 
-.option-btn {
+/* Alle almindelige svarknapper */
+.options button,
+#options button,
+#answerButtons button,
+.choice-btn,
+.option-btn,
+button.answer-btn {
   appearance: none;
-  border: 1px solid #efe6bf;
+  border: none;
   border-radius: 16px;
-  padding: 16px 18px;
-  background: #fff8dc;
+  background: #f6e7a8;
   color: #111827;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  padding: 14px 28px;
+  min-width: 140px;
   cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.15s ease,
-    border-color 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.option-btn:hover {
+.options button:hover,
+#options button:hover,
+#answerButtons button:hover,
+.choice-btn:hover,
+.option-btn:hover,
+button.answer-btn:hover {
+  background: #efd97d;
   transform: translateY(-1px);
-  background: #fdf2ba;
-  border-color: #e6d57f;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
-.option-btn:active {
-  transform: translateY(0);
+/* Når et svar er valgt */
+.options button.selected,
+#options button.selected,
+#answerButtons button.selected,
+.choice-btn.selected,
+.option-btn.selected,
+button.answer-btn.selected {
+  background: #e0b437;
 }
 
-.option-btn.selected {
-  background: #f3e7a0;
-  border-color: #dfc85f;
-  color: #111827;
-  box-shadow: 0 8px 18px rgba(227, 201, 98, 0.18);
-}
-
-.option-btn.correct {
-  background: #eef8ef;
-  border-color: #b7d7bc;
-}
-
-.option-btn.wrong {
-  background: #fff1f1;
-  border-color: #e5b9b9;
-}
-
-/* feedback */
-.feedback-box {
-  min-height: 120px;
+/* Feedbackfelt */
+#message,
+#solution,
+.feedback-box,
+.result-box {
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 2px solid #e8edf2;
   border-radius: 18px;
-  padding: 18px 18px 20px;
-  margin-bottom: 20px;
-  color: #374151;
-  line-height: 1.6;
+  min-height: 120px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-.feedback-box:empty::before {
-  content: "";
+/* Gruppering af feedback hvis begge felter bruges */
+#message:empty,
+#solution:empty {
+  display: none;
 }
 
-/* næste-knap */
-.next-btn {
+/* Kontrolknapper nederst */
+.controls,
+.nav-buttons,
+.bottom-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* Næste / Ny runde / generelle action-knapper */
+#nextBtn,
+#resetBtn,
+.next-btn,
+.reset-btn,
+button.nav-btn,
+button.control-btn {
   appearance: none;
   border: none;
   border-radius: 14px;
   padding: 14px 22px;
   font-size: 1rem;
   font-weight: 700;
-  background: #e5e7eb;
-  color: #9ca3af;
-  transition: background 0.15s ease, transform 0.15s ease, color 0.15s ease;
-}
-
-.next-btn.enabled {
-  background: #1f2937;
-  color: #ffffff;
   cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
-.next-btn.enabled:hover {
+/* Primær knap */
+#nextBtn,
+.next-btn,
+button.nav-btn.primary,
+button.control-btn.primary {
   background: #111827;
+  color: #ffffff;
+}
+
+#nextBtn:hover,
+.next-btn:hover,
+button.nav-btn.primary:hover,
+button.control-btn.primary:hover {
+  background: #1f2937;
   transform: translateY(-1px);
 }
 
-/* resultat / info-bokse */
-.result-box {
-  background: var(--surface-soft);
-  border: 1px solid #efe7c8;
-  border-radius: 18px;
-  padding: 18px;
+/* Sekundær knap */
+#resetBtn,
+.reset-btn,
+button.nav-btn.secondary,
+button.control-btn.secondary {
+  background: #eef2f7;
+  color: #1f2937;
 }
 
-/* små labels */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: #6a5712;
-  font-size: 0.9rem;
-  font-weight: 700;
+#resetBtn:hover,
+.reset-btn:hover,
+button.nav-btn.secondary:hover,
+button.control-btn.secondary:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
 }
 
-/* mobil */
-@media (max-width: 700px) {
+/* Disabled */
+button:disabled,
+#nextBtn:disabled,
+#resetBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Sluttekst */
+.end-title,
+.round-finished,
+#roundFinished {
+  margin-top: 22px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* Mobil */
+@media (max-width: 720px) {
   .wrap {
-    padding: 22px 14px 32px;
+    padding: 20px 12px 32px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 
   .card {
     padding: 20px;
-    border-radius: 18px;
-  }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    font-size: 0.98rem;
   }
 
   .question-box,
-  .question-box p {
-    font-size: 1.45rem;
+  #sentenceBox,
+  #exerciseBox,
+  .sentence-box {
+    font-size: 1.5rem;
+    padding: 22px 18px;
   }
 
-  .options {
-    grid-template-columns: 1fr;
+  .options,
+  #options,
+  #answerButtons,
+  .button-row {
+    flex-direction: column;
   }
 
-  .option-btn {
-    font-size: 1.15rem;
-    padding: 15px 16px;
+  .options button,
+  #options button,
+  #answerButtons button,
+  .choice-btn,
+  .option-btn,
+  button.answer-btn {
+    width: 100%;
+    min-width: 0;
   }
 }
