@@ -295,10 +295,6 @@ function renderSentenceWithBlank(text) {
   return text.replace("_________", '<span class="blank" aria-hidden="true"></span>');
 }
 
-function renderFilledSentence(text, answer) {
-  return text.replace("_________", `<span class="blank correct-fill">${answer}</span>`);
-}
-
 function renderQuestion() {
   const item = getCurrentItem();
 
@@ -337,7 +333,7 @@ function disableChoices() {
 function showFeedback(isCorrect, chosenValue) {
   const item = getCurrentItem();
 
-  sentenceText.innerHTML = renderFilledSentence(item.text, item.answer);
+  sentenceText.innerHTML = renderSentenceWithBlank(item.text);
 
   if (isCorrect) {
     feedbackMessage.textContent = "Rigtigt.";
