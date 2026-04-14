@@ -3,56 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nogen, nogle eller noget</title>
+  <title>DanskGrammatik</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <h1>Nogen, nogle eller noget</h1>
-      <p>Vælg det rigtige ord. Du får 10 tilfældige sætninger i hver runde.</p>
+      <h1>DanskGrammatik</h1>
+      <p>Vælg en øvelse herunder.</p>
     </header>
 
-    <main class="card quiz-card">
-      <div class="topbar">
-        <div id="roundInfo">Runde 1 af 6</div>
-        <div id="progressInfo">Sætning 1 af 10</div>
-      </div>
+    <main class="grid">
+      <a class="card" href="https://ehlersdam-netizen.github.io/Build-up-ordstilling/" target="_blank" rel="noopener noreferrer">
+        <h2>Build-up ordstilling</h2>
+        <p>Træn dansk ordstilling ved at sætte ordene sammen i den rigtige rækkefølge.</p>
+      </a>
 
-      <div class="progress-track">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
+      <a class="card" href="https://ehlersdam-netizen.github.io/Frasalverver-og-faste-udtryk/" target="_blank" rel="noopener noreferrer">
+        <h2>Frasalverber og faste udtryk</h2>
+        <p>Vælg det korrekte udtryk og træn ordforråd og vendinger.</p>
+      </a>
 
-      <section class="sentence-box">
-        <div id="sentenceNumber" class="sentence-number">1.</div>
-        <div id="sentenceText" class="sentence-text">Sætningen vises her.</div>
-      </section>
-
-      <section id="choices" class="choices">
-        <button class="choice-btn" data-choice="nogen">nogen</button>
-        <button class="choice-btn" data-choice="nogle">nogle</button>
-        <button class="choice-btn" data-choice="noget">noget</button>
-      </section>
-
-      <section id="feedbackArea" class="feedback-area" aria-live="polite">
-        <div id="feedbackMessage" class="feedback-message"></div>
-        <div id="correctAnswer" class="correct-answer"></div>
-        <div id="explanation" class="explanation"></div>
-      </section>
-
-      <div class="actions">
-        <button id="nextBtn" class="next-btn" disabled>Næste</button>
-        <button id="newRoundBtn" class="new-round-btn hidden">Ny runde</button>
-      </div>
-
-      <section id="roundSummary" class="round-summary hidden">
-        <h2>Runden er slut</h2>
-        <p id="scoreText"></p>
-        <p id="roundsLeftText"></p>
-      </section>
+      <a class="card" href="https://ehlersdam-netizen.github.io/Nogle-nogen-noget/" target="_blank" rel="noopener noreferrer">
+        <h2>Nogen, nogle eller noget</h2>
+        <p>Træn forskellen på nogen, nogle og noget med korte sætninger og forklaringer.</p>
+      </a>
     </main>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
