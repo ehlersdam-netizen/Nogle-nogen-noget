@@ -5,23 +5,23 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f7f8fb;
+  background: #f6f7fb;
   color: #1f2937;
 }
 
 .wrap {
-  max-width: 980px;
+  max-width: 920px;
   margin: 0 auto;
   padding: 28px 16px 48px;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .hero h1 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 3rem;
   line-height: 1.1;
   color: #111827;
@@ -29,240 +29,216 @@ body {
 
 .hero p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  line-height: 1.5;
   color: #4b5563;
 }
 
-.card,
-.game-card,
-main,
-section {
+.card.quiz-card {
   background: #ffffff;
-  border: 1px solid #eceff3;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-}
-
-/* Selve spillefeltet */
-.card {
+  border: 1px solid #e8ecf1;
+  border-radius: 26px;
   padding: 28px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
 }
 
-/* Progress-tekst */
-#progressText,
-.progress-text {
-  display: block;
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#progressInfo {
   font-size: 1rem;
   font-weight: 700;
   color: #374151;
-  margin-bottom: 14px;
 }
 
-/* Progressbar */
-.progress {
+.progress-track {
   width: 100%;
   height: 12px;
-  background: #eef2f7;
+  background: #edf1f5;
   border-radius: 999px;
   overflow: hidden;
   margin-bottom: 28px;
 }
 
-.progress-bar,
-.progress-fill,
-#progressBar {
+.progress-bar {
+  width: 10%;
   height: 100%;
-  background: #e0b437;
+  background: #e1b63c;
   border-radius: 999px;
   transition: width 0.25s ease;
 }
 
-/* Opgavefelt */
-.question-box,
-#sentenceBox,
-#exerciseBox,
 .sentence-box {
   background: #ffffff;
-  border: 2px solid #edf1f5;
-  border-radius: 20px;
-  padding: 28px 24px;
+  border: 2px solid #eceff4;
+  border-radius: 22px;
+  padding: 30px 24px;
   margin-bottom: 22px;
-  font-size: 2rem;
+}
+
+.sentence-text {
+  font-size: 2.1rem;
   line-height: 1.5;
   font-weight: 700;
   color: #111827;
+  text-align: center;
 }
 
-/* Tom linje i sætningen */
-.blank,
-.answer-line,
-.answer-slot {
-  display: inline-block;
-  min-width: 150px;
-  border-bottom: 4px solid #8b5a2b;
-  transform: translateY(-2px);
-  margin: 0 6px;
-}
-
-/* Knapområde */
-.options,
-#options,
-#answerButtons,
-.button-row {
-  display: flex;
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  flex-wrap: wrap;
   margin-bottom: 22px;
 }
 
-/* Alle almindelige svarknapper */
-.options button,
-#options button,
-#answerButtons button,
-.choice-btn,
-.option-btn,
-button.answer-btn {
+.choice-btn {
   appearance: none;
   border: none;
   border-radius: 16px;
-  background: #f6e7a8;
+  background: #f7e6a4;
   color: #111827;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  padding: 14px 28px;
-  min-width: 140px;
+  padding: 16px 20px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.options button:hover,
-#options button:hover,
-#answerButtons button:hover,
-.choice-btn:hover,
-.option-btn:hover,
-button.answer-btn:hover {
-  background: #efd97d;
+.choice-btn:hover:not(:disabled) {
+  background: #f0d97e;
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Når et svar er valgt */
-.options button.selected,
-#options button.selected,
-#answerButtons button.selected,
-.choice-btn.selected,
-.option-btn.selected,
-button.answer-btn.selected {
-  background: #e0b437;
+.choice-btn:disabled {
+  opacity: 1;
+  cursor: default;
 }
 
-/* Feedbackfelt */
-#message,
-#solution,
-.feedback-box,
-.result-box {
+.choice-btn.selected {
+  background: #e1b63c;
+}
+
+.choice-btn.correct {
+  background: #d9f1dd;
+  color: #14532d;
+}
+
+.choice-btn.wrong {
+  background: #fde2e2;
+  color: #991b1b;
+}
+
+.feedback-area {
+  min-height: 140px;
   background: #ffffff;
   border: 2px solid #e8edf2;
-  border-radius: 18px;
-  min-height: 120px;
+  border-radius: 20px;
   padding: 18px 20px;
-  margin-bottom: 18px;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-/* Gruppering af feedback hvis begge felter bruges */
-#message:empty,
-#solution:empty {
+.feedback-message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.correct-answer {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.explanation {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.feedback-message:empty,
+.correct-answer:empty,
+.explanation:empty {
   display: none;
 }
 
-/* Kontrolknapper nederst */
-.controls,
-.nav-buttons,
-.bottom-buttons {
+.actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 6px;
 }
 
-/* Næste / Ny runde / generelle action-knapper */
-#nextBtn,
-#resetBtn,
 .next-btn,
-.reset-btn,
-button.nav-btn,
-button.control-btn {
+.new-round-btn {
   appearance: none;
   border: none;
   border-radius: 14px;
   padding: 14px 22px;
   font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 
-/* Primær knap */
-#nextBtn,
-.next-btn,
-button.nav-btn.primary,
-button.control-btn.primary {
+.next-btn {
   background: #111827;
   color: #ffffff;
 }
 
-#nextBtn:hover,
-.next-btn:hover,
-button.nav-btn.primary:hover,
-button.control-btn.primary:hover {
+.next-btn:hover:not(:disabled) {
   background: #1f2937;
   transform: translateY(-1px);
+  cursor: pointer;
 }
 
-/* Sekundær knap */
-#resetBtn,
-.reset-btn,
-button.nav-btn.secondary,
-button.control-btn.secondary {
-  background: #eef2f7;
-  color: #1f2937;
-}
-
-#resetBtn:hover,
-.reset-btn:hover,
-button.nav-btn.secondary:hover,
-button.control-btn.secondary:hover {
-  background: #e5e7eb;
-  transform: translateY(-1px);
-}
-
-/* Disabled */
-button:disabled,
-#nextBtn:disabled,
-#resetBtn:disabled {
-  opacity: 0.5;
+.next-btn:disabled {
+  background: #d1d5db;
+  color: #6b7280;
   cursor: default;
-  transform: none;
-  box-shadow: none;
 }
 
-/* Sluttekst */
-.end-title,
-.round-finished,
-#roundFinished {
-  margin-top: 22px;
-  font-size: 2rem;
-  font-weight: 800;
+.new-round-btn {
+  background: #eef2f7;
   color: #111827;
 }
 
-/* Mobil */
+.new-round-btn:hover {
+  background: #e3e8ef;
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.round-summary {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid #e8ecf1;
+}
+
+.round-summary h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  color: #111827;
+}
+
+.round-summary p {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  color: #374151;
+}
+
+.hidden {
+  display: none !important;
+}
+
 @media (max-width: 720px) {
   .wrap {
-    padding: 20px 12px 32px;
+    padding: 22px 12px 36px;
   }
 
   .hero h1 {
@@ -273,32 +249,34 @@ button:disabled,
     font-size: 1rem;
   }
 
-  .card {
+  .card.quiz-card {
     padding: 20px;
+    border-radius: 20px;
   }
 
-  .question-box,
-  #sentenceBox,
-  #exerciseBox,
   .sentence-box {
-    font-size: 1.5rem;
-    padding: 22px 18px;
+    padding: 22px 16px;
   }
 
-  .options,
-  #options,
-  #answerButtons,
-  .button-row {
+  .sentence-text {
+    font-size: 1.55rem;
+  }
+
+  .choices {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-btn {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .actions {
     flex-direction: column;
   }
 
-  .options button,
-  #options button,
-  #answerButtons button,
-  .choice-btn,
-  .option-btn,
-  button.answer-btn {
+  .next-btn,
+  .new-round-btn {
     width: 100%;
-    min-width: 0;
   }
 }
