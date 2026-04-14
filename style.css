@@ -17,19 +17,19 @@ body {
 
 .hero {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
   margin: 0 0 8px;
-  font-size: 2.85rem;
+  font-size: 2.7rem;
   line-height: 1.08;
   color: #111827;
 }
 
 .hero p {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   line-height: 1.45;
   color: #4b5563;
 }
@@ -38,7 +38,7 @@ body {
   background: #ffffff;
   border: 1px solid #e7ebf0;
   border-radius: 24px;
-  padding: 22px;
+  padding: 20px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
 }
 
@@ -61,7 +61,7 @@ body {
   background: #edf2f6;
   border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .progress-bar {
@@ -76,14 +76,14 @@ body {
   background: #ffffff;
   border: 1.5px solid #e8edf2;
   border-radius: 20px;
-  padding: 26px 20px;
-  margin-bottom: 18px;
+  padding: 22px 18px;
+  margin-bottom: 16px;
 }
 
 .sentence-text {
-  font-size: 1.95rem;
-  line-height: 1.55;
-  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 400;
   color: #111827;
   text-align: center;
 }
@@ -93,9 +93,9 @@ body {
 .word-blank,
 .gap {
   display: inline-block;
-  width: 150px;
+  width: 120px;
   height: 0.9em;
-  margin: 0 0.28em;
+  margin: 0 0.32em;
   border-bottom: 3px solid #111827;
   vertical-align: -0.08em;
 }
@@ -104,25 +104,25 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .choice-btn {
   appearance: none;
-  border: 1px solid #e6d38d;
+  border: 1px solid #e5d186;
   border-radius: 14px;
-  background: #f3df8e;
+  background: #f2de8b;
   color: #111827;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  padding: 14px 18px;
+  padding: 13px 16px;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: none;
+  transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
 
 .choice-btn:hover:not(:disabled) {
-  background: #ebd171;
+  background: #ebd170;
+  border-color: #d9bb52;
   transform: translateY(-1px);
 }
 
@@ -133,7 +133,7 @@ body {
 
 .choice-btn.selected {
   background: #e0b43a;
-  border-color: #d2a62f;
+  border-color: #cfa12a;
 }
 
 .choice-btn.correct {
@@ -149,30 +149,30 @@ body {
 }
 
 .feedback-area {
-  min-height: 118px;
+  min-height: 104px;
   background: #ffffff;
   border: 1.5px solid #e8edf2;
   border-radius: 18px;
-  padding: 16px 18px;
-  margin-bottom: 18px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
 }
 
 .feedback-message {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: #111827;
 }
 
 .correct-answer {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #111827;
   margin-bottom: 6px;
 }
 
 .explanation {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   color: #374151;
 }
@@ -194,8 +194,8 @@ body {
   appearance: none;
   border: none;
   border-radius: 12px;
-  padding: 13px 20px;
-  font-size: 0.98rem;
+  padding: 12px 18px;
+  font-size: 0.96rem;
   font-weight: 700;
   transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
@@ -229,20 +229,20 @@ body {
 }
 
 .round-summary {
-  margin-top: 22px;
-  padding-top: 18px;
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid #e8ecf1;
 }
 
 .round-summary h2 {
   margin: 0 0 10px;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   color: #111827;
 }
 
 .round-summary p {
   margin: 0 0 6px;
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: #374151;
 }
 
@@ -256,7 +256,7 @@ body {
   }
 
   .hero h1 {
-    font-size: 2.15rem;
+    font-size: 2.1rem;
   }
 
   .hero p {
@@ -264,24 +264,24 @@ body {
   }
 
   .card.quiz-card {
-    padding: 18px;
+    padding: 16px;
     border-radius: 18px;
   }
 
   .sentence-box {
-    padding: 20px 14px;
+    padding: 18px 14px;
   }
 
   .sentence-text {
-    font-size: 1.35rem;
-    line-height: 1.6;
+    font-size: 1.02rem;
+    line-height: 1.65;
   }
 
   .blank,
   .answer-blank,
   .word-blank,
   .gap {
-    width: 105px;
+    width: 90px;
     margin: 0 0.2em;
   }
 
@@ -291,7 +291,7 @@ body {
 
   .choice-btn {
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .actions {
