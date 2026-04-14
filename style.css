@@ -81,11 +81,24 @@ body {
 }
 
 .sentence-text {
-  font-size: 2.1rem;
-  line-height: 1.5;
-  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1.7;
+  font-weight: 500;
   color: #111827;
   text-align: center;
+}
+
+/* Hul i sætningen */
+.blank,
+.answer-blank,
+.word-blank,
+.gap {
+  display: inline-block;
+  width: 150px;
+  height: 0.95em;
+  margin: 0 0.28em;
+  border-bottom: 3px solid #8b5a3c;
+  vertical-align: -0.08em;
 }
 
 .choices {
@@ -259,7 +272,16 @@ body {
   }
 
   .sentence-text {
-    font-size: 1.55rem;
+    font-size: 1.3rem;
+    line-height: 1.65;
+  }
+
+  .blank,
+  .answer-blank,
+  .word-blank,
+  .gap {
+    width: 110px;
+    margin: 0 0.22em;
   }
 
   .choices {
